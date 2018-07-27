@@ -1,6 +1,6 @@
 class Queue {
- char q[];
- int putloc, getloc;
+ private char q[];
+ private int putloc, getloc;
 
  Queue(int size) {
   q = new char[size+1];
@@ -14,6 +14,10 @@ class Queue {
   }
   putloc++;
   q[putloc] = ch;
+ }
+ 
+ int getPutloc() {
+  return putloc;
  }
  
  char get() {
@@ -41,7 +45,7 @@ class QDemo {
   
   for(i=0; i < 26; i++) {
    bigQ.put((char) ('A' + i));
-   System.out.print(bigQ.putloc + " ");
+   System.out.print(bigQ.getPutloc() + " ");
   }
 
   System.out.println("\n");
