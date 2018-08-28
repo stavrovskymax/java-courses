@@ -1,8 +1,8 @@
 public class Client {
     String id;
-    Pet pet;
+    IPet pet;
     
-    public Client(String id, Pet pet) {
+    public Client(String id, IPet pet) {
         this.id = id;
         this.pet = pet;
     }

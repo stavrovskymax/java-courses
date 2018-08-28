@@ -1,7 +1,8 @@
-public class Cat implements Pet {
-    private final Pet pet;
+public class Cat implements IPet {
+ 
+    private final IPet pet;
     
-    public Dog(Pet pet) {
+    public Cat(Pet pet) {
         this.pet = pet;
     }
     

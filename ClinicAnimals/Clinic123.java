@@ -72,7 +72,7 @@ class Clinic {
     }
 }
 
-class Rextester {
+class Clinic123 {
     public static void main(String args[]) {
         Clinic clinic = new Clinic(3);
         String find;

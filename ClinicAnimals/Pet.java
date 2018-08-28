@@ -1,5 +1,18 @@
-public interface Pet {
-    String getName();
+public class Pet implements IPet {
+
+    private String name;
+    
+    public Pet(final String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public String getName() {
+        return this.name;
+    }
 	
-    void setName(String name);
+    @Override
+    public void setName(final String name) {
+        this.name = name;
+    }
 }
