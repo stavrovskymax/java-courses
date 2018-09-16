@@ -13,7 +13,7 @@ class ClinicRunner {
         System.out.println();
 
         System.out.println("Find client(s) by pet name");        
-        clinic.findClientByPetName("Dog");
+        System.out.println(clinic.findClientByPetName("Dog"));
 
         System.out.println();
 

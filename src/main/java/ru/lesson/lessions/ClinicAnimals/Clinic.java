@@ -19,19 +19,15 @@ public class Clinic {
         }
     }
     
-    public void findClientByPetName(final String name) {
-        int count = 0;
+    public String findClientByPetName(final String name) {
         for (int i=0; i < this.clients.length; i++) {
             if (this.clients[i] != null) {
                 if (name.equals(this.clients[i].pet.getName())) {
-                     System.out.println(i + ": Client: " + this.clients[i].id + ", Pet: " + this.clients[i].pet.getName());
-                     count++;
+                    return i + ": Client: " + this.clients[i].id + ", Pet: " + this.clients[i].pet.getName();
                 }
             }
         }
-        if (count == 0) {
-            System.out.println("Not found");
-        }
+        return "Not found";
     }
     
     public void findPetByClientName(final String name) {
