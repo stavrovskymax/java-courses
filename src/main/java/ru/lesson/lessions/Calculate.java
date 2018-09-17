@@ -38,8 +38,13 @@ public class Calculate {
                     first = calc.getResult();
                     break;
                    case "/":
-                    calc.division(first, second);
-                    System.out.println("Results: " + calc.getResult());
+                       try {
+                           calc.division(first, second);
+                       } catch (UserException e) {
+                           System.out.println(e.getMessage());
+                           System.out.println("Please, enter two parameters.");
+                       }
+                       System.out.println("Results: " + calc.getResult());
                     first = calc.getResult();
                     break;
                    case "clean":

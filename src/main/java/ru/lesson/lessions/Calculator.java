@@ -25,10 +25,18 @@ public class Calculator {
     }
 
 
-    public void division(int ... params) {
-        this.result = params[0];
-        for(int i=1; i<params.length; i++)
-            this.result /= params[i];
+    public void division(int ... params) throws UserException {
+        if (params.length > 0 ) {
+            this.result = params[0];
+            for (int i = 1; i < params.length; i++) {
+                if (params[0] == 0 | params[i] == 0) {
+                    throw new IllegalArgumentException("You to tru div by 0. Please change parameter!");
+                }
+                this.result /= params[i];
+            }
+        } else {
+            throw new UserException("You should enter params");
+        }
     }
 
 
