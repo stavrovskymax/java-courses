@@ -1,16 +1,25 @@
 package ru.lesson.lessions.ClinicAnimals;
 
 public class Clinic {
+    private static final String ERROR_CLIENT_NOT_FOUND = "Error! Client not found";
+    private static final String ERROR_CLINIC_IS_FULL = "Error! Clinic is full";
+
     final Client[] clients;
-    
+    final int size;
+
     public Clinic(final int size) {
         this.clients = new Client[size];
+        this.size = size;
     }
     
-    public void addClient(final int position, final Client client) {
-        this.clients[position] = client;
+    public void addClient(final int position, final Client client) throws UserExceptionClinic {
+        if (position < this.size) {
+            this.clients[position] = client;
+        } else {
+            throw new UserExceptionClinic(ERROR_CLINIC_IS_FULL);
+        }
     }
-    
+
     public void showClient() {
         for (int i=0; i < clients.length; i++) {
             if (this.clients[i] != null) {
@@ -27,10 +36,10 @@ public class Clinic {
                 }
             }
         }
-        return "Not found";
+        return ERROR_CLIENT_NOT_FOUND;
     }
     
-    public void findPetByClientName(final String name) {
+    public void findPetByClientName(final String name) throws UserExceptionClinic {
         int count = 0;
         for (int i=0; i < this.clients.length; i++) {
             if (this.clients[i] != null) {
@@ -41,7 +50,7 @@ public class Clinic {
             }
         }
         if (count == 0) {
-            System.out.println("Not found");
+            throw new UserExceptionClinic("Error! Pet not found");
         }
     }
     
